@@ -24,4 +24,20 @@ describe("Custom equality functions can be written", function () {
     it("they can also be negated with the not function", function () {
         expect([1, 2, 3]).not.toEqual([3, 2, 1]);
     });
+
+    describe("asymmetricMatch can be used to write a custom matcher", function() {
+        var isUpperCase = {
+            asymmetricMatch: function(actual) {
+                return actual === actual.toUpperCase();
+            }
+        };
+
+        it("they are passed in to the toEqual method", function() {
+            expect("FOO").toEqual(isUpperCase);
+        });
+
+        it("they can be negated ", function() {
+            expect("Foo").not.toEqual(isUpperCase);
+        });
+    });
 });

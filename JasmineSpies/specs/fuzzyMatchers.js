@@ -9,7 +9,7 @@ describe("Fuzzy matches can be used against spies", function () {
         foo = jasmine.createSpy('foo');
 
         foo(12, []);
-        foo([1,2,3]);
+        foo([1, 2, 3]);
         foo("Hello");
         foo("Hello there monkey");
         foo({moo: "bar", "doo": "car"});
@@ -30,12 +30,27 @@ describe("Fuzzy matches can be used against spies", function () {
     });
 
     it("jasmine.arrayContaining matches an array as a subset of another", function () {
-        expect(foo).toHaveBeenCalledWith(jasmine.arrayContaining([1,3]));
+        expect(foo).toHaveBeenCalledWith(jasmine.arrayContaining([1, 3]));
     });
 
     it("jasmine.stringMatching allows regular exspression of a key value pair where the value is a string", function () {
         expect(foo).toHaveBeenCalledWith(jasmine.stringMatching(/^Hello$/));
         expect(foo).toHaveBeenCalledWith(jasmine.stringMatching(' there '));
     });
-});
 
+    describe("asymmetricMatch testers can be used as well", function () {
+        var isUpperCase = {
+            asymmetricMatch: function (actual) {
+                return actual === actual.toUpperCase();
+            }
+        };
+
+        it("by passing them into to toHaveBeenCalledWith", function () {
+            var foo = jasmine.createSpy('foo');
+
+            foo('FOO');
+
+            expect(foo).toHaveBeenCalledWith(isUpperCase);
+        });
+    });
+});
