@@ -1,6 +1,6 @@
 /* global describe, it, expect, beforeEach, afterEach, jasmine, toBeCustom, afterAll, beforeAll, spyOn */
 
-describe("A spy replaces a function and allows determination if it was called as intended", function () {
+describe("spyOn can be used to create a spy which replaces a function and allows determination if it was called as intended", function () {
     "use strict";
 
     var foo;
@@ -93,7 +93,7 @@ describe("A spy replaces a function and allows determination if it was called as
         }
     });
 
-    describe("A spy has many assertions available for calls such as", function () {
+    describe("calls can be used to assert if and how the spy was called", function () {
 
         it("calls.Count which returns the number of times called", function () {
 
