@@ -1,6 +1,6 @@
 /* global describe, it, beforeEach, expect, afterEach, $*/
 
-describe("DOM Testing", function () {
+describe("Jasmine allows testing the DOM", function () {
     "use strict";
 
     var templateId = "#TestHtml-Template";
@@ -16,7 +16,7 @@ describe("DOM Testing", function () {
         $(resultId).remove();
     });
 
-    it("can touch touch the DOM and test this", function () {
+    it("which includes using libraries such as jQuery", function () {
         $(resultId).html("jQuery");
         expect($(resultId).text()).toBe("jQuery");
     });

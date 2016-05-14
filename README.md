@@ -3,3 +3,4 @@
 Frameworks:
 
 - Jasmine
+- Jasmine spies

@@ -1,6 +1,6 @@
 /* global describe, it, expect, beforeEach, jasmine, toBeCustom, math */
 
-describe("Custom matchers", function () {
+describe("Custom matchers can be written", function () {
     'use strict';
 
     var isWithinPrecision = function (result, precision) {
@@ -32,10 +32,11 @@ describe("Custom matchers", function () {
                     compare: function (actual, divisibleBy) {
 
                         var remainder = actual % divisibleBy;
-                        var passed = util.equals(0, 0.5, customEqualityTesters);
+                        var passed = util.equals(0.5, remainder, customEqualityTesters);
                         return {
                             pass: passed,
-                            message: 'Expected ' + actual + (passed ? '' : ' not') + ' to be divisible by ' + divisibleBy + ' within a preision of 0.5'
+                            message: 'Expected ' + actual + (passed ? '' : ' not') + ' to be divisible by '
+                            + divisibleBy + ' within a precision of 0.5'
                         };
                     }
                 };
@@ -43,12 +44,12 @@ describe("Custom matchers", function () {
         });
     });
 
-    it('allow you to defined your own assertions', function () {
+    it('to allow you to define your own assertions', function () {
         expect(10).toBeDivisibleBy(2);
         expect(10).not.toBeDivisibleBy(3);
     });
 
-    it('allow you to defined your own assertions with custom equality testers', function () {
+    it('and can be used in conjunction with custom equality testers', function () {
         expect(9.5).toBeDivisibleByIsh(3);
     });
 });
