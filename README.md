@@ -4,3 +4,4 @@ Frameworks:
 
 - Jasmine
 - Jasmine spies
+- Jasmine asynch
