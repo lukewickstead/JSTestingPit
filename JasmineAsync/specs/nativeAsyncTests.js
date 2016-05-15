@@ -1,4 +1,7 @@
+/* global describe, it, expect, beforeEach */
+
 describe("Asynchronous specs", function () {
+    "use strict";
     var counter = 0;
 
     beforeEach(function (done) {

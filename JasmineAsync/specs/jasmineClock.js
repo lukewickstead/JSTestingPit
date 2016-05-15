@@ -1,6 +1,8 @@
 /* global describe, it, expect, beforeEach, afterEach, jasmine, toBeCustom, afterAll, beforeAll, spyOn */
 
 describe("jasmine.clock can be used to test time dependant code", function () {
+    "use strict";
+    
     afterEach(function () {
         jasmine.clock().uninstall();
     });

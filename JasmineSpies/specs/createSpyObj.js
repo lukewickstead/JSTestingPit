@@ -1,6 +1,7 @@
-/* global describe, it, expect, beforeEach, afterEach, jasmine, toBeCustom, afterAll, beforeAll, spyOn */
+/* global describe, it, expect, beforeEach, afterEach, jasmine, toBeCustom, afterAll, beforeAll, spyOn, north, east, south west */
 
-describe("createSpyObj can be used to create a mock with multiople spies", function() {
+describe("createSpyObj can be used to create a mock with multiple spies", function() {
+    "use strict";
 
     var move;
 

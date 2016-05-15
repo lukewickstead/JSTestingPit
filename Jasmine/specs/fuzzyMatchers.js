@@ -1,5 +1,6 @@
 /* global describe, it, expect, beforeEach, afterEach, jasmine, toBeCustom, afterAll, beforeAll, spyOn */
 describe("Fuzzy matchers allow partial matching", function () {
+    "use strict";
 
     it("jasmine.any can be used to assert upon any type", function () {
         expect(1).toEqual(jasmine.any(Number));

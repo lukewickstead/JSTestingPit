@@ -20,7 +20,7 @@ describe("Fuzzy matches can be used against spies", function () {
         expect(foo).toHaveBeenCalledWith(jasmine.any(Number), jasmine.any(Object));
     });
 
-    it("jasmine.anytying asserts a call was made with a parameter but it can be anyhing", function () {
+    it("jasmine.anything asserts a call was made with a parameter but it can be anything", function () {
         expect(foo).toHaveBeenCalledWith(12, jasmine.anything());
         expect(foo).toHaveBeenCalledWith(jasmine.anything(), jasmine.any(Object));
     });
@@ -33,7 +33,7 @@ describe("Fuzzy matches can be used against spies", function () {
         expect(foo).toHaveBeenCalledWith(jasmine.arrayContaining([1, 3]));
     });
 
-    it("jasmine.stringMatching allows regular exspression of a key value pair where the value is a string", function () {
+    it("jasmine.stringMatching allows regular expression of a key value pair where the value is a string", function () {
         expect(foo).toHaveBeenCalledWith(jasmine.stringMatching(/^Hello$/));
         expect(foo).toHaveBeenCalledWith(jasmine.stringMatching(' there '));
     });

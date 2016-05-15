@@ -35,8 +35,8 @@ describe("Custom matchers can be written", function () {
                         var passed = util.equals(0.5, remainder, customEqualityTesters);
                         return {
                             pass: passed,
-                            message: 'Expected ' + actual + (passed ? '' : ' not') + ' to be divisible by '
-                            + divisibleBy + ' within a precision of 0.5'
+                            message: 'Expected ' + actual + (passed ? '' : ' not') + ' to be divisible by ' +
+                                divisibleBy + ' within a precision of 0.5'
                         };
                     }
                 };

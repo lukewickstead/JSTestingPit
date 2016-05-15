@@ -1,4 +1,5 @@
-/* global describe, xdescribe, it, xit, expect, beforeEach, jasmine, toBeCustom */
+/* global describe, xdescribe, it, xit, expect, beforeEach, jasmine, toBeCustom, pending */
+
 
 xdescribe("xdescribe can be used to disabled a fixture", function () {
     "use strict";

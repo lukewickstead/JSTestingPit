@@ -1,4 +1,4 @@
-/* global describe, it, expect, beforeEach, afterEach, jasmine, toBeCustom, afterAll, beforeAll, spyOn */
+/* global describe, it, expect, beforeEach, afterEach, jasmine, toBeCustom, afterAll, beforeAll, spyOn, north, east, south, west */
 
 describe("spyOn can be used to create a spy which replaces a function and allows determination if it was called as intended", function () {
     "use strict";
@@ -9,21 +9,16 @@ describe("spyOn can be used to create a spy which replaces a function and allows
         foo = {
             FunctionToSpyOn: function (valueOne, valueTwo) {
             },
-
-            FunctionToSpyOnButNotCalled: function (valueOne, valueTwo) {
+            FunctionToSpyOnButNotCalled: function () {
             },
-
-            StubbedFunction: function (valueOne, valueTwo) {
-                return false;
+            StubbedFunction: function () {
             },
             CalledWithAFake: function () {
-                return false;
             },
             CalledAsThrough: function () {
                 return true;
             },
             CalledWithThrow: function () {
-                return false;
             }
         };
     });
@@ -76,7 +71,7 @@ describe("spyOn can be used to create a spy which replaces a function and allows
         expect(foo.StubbedFunction()).not.toEqual(false);
     });
 
-    it('and.CallFake can be used to call an additionl function at the same time', function () {
+    it('and.CallFake can be used to call an additional function at the same time', function () {
         expect(foo.CalledWithAFake()).toEqual(true);
     });
 
@@ -144,7 +139,7 @@ describe("spyOn can be used to create a spy which replaces a function and allows
             expect(foo.FunctionToSpyOn.calls.first()).toEqual({object: foo, args: [1], returnValue: undefined});
         });
 
-        it("calls.mostRecent can be used to return the contecxt for the last call", function () {
+        it("calls.mostRecent can be used to return the context for the last call", function () {
 
             foo.FunctionToSpyOn(1);
             foo.FunctionToSpyOn(2, 3);

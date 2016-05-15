@@ -1,8 +1,8 @@
 /* global describe, xdescribe, it, xit, expect, beforeEach, afterEach, jasmine, toBeCustom, afterAll, beforeAll */
 
-"use strict";
-
 describe("Matchers are helpers to assert if a test is to pass or fail", function () {
+    "use strict";
+
     var foo = {a: 12, b: 34};
     var bar = {a: 12, b: 34};
     var fooAndBar = [foo, bar];
