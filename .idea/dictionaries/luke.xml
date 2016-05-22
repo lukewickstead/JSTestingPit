@@ -4,8 +4,10 @@
       <w>chai</w>
       <w>falsy</w>
       <w>matchers</w>
+      <w>qunit</w>
       <w>sinon</w>
       <w>smerf</w>
+      <w>teardown</w>
       <w>truthy</w>
     </words>
   </dictionary>

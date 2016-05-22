@@ -19,3 +19,4 @@ Frameworks:
     - Fake Timer
     - Fake Server
     - Fake XMLHttpRequest
+- QUnit
