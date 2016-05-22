@@ -3,6 +3,9 @@
     <words>
       <w>chai</w>
       <w>falsy</w>
+      <w>matchers</w>
+      <w>sinon</w>
+      <w>smerf</w>
       <w>truthy</w>
     </words>
   </dictionary>

@@ -3,5 +3,8 @@
 Frameworks:
 
 - Jasmine
-- Jasmine spies
-- Jasmine asynch
+    - Jasmine spies
+    - Jasmine asynch
+- Chai
+    - TDD
+    - BDD (Should/Expect)
