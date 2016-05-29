@@ -1,0 +1,26 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Mocha BDD Style Test Fixtures</title>
+    <link rel="stylesheet" href="../lib/mocha.css" />
+</head>
+<body>
+
+<div id="mocha"></div>
+
+<script src="../lib/mocha.js"></script>
+<script src="../lib/chai.js"></script>
+<script>mocha.setup('bdd');</script>
+
+<script src="specs/testFixtureBDDStyle.js"></script>
+<script src="specs/asynchronousSpec.js"></script>
+<script src="specs/rootHooks.js"></script>
+<script src="specs/skippingAndPendingTests.js"></script>
+<script src="specs/retryingTests.js"></script>
+<script src="specs/dynamicallyGeneratingTests.js"></script>
+
+<script>
+    mocha.run();
+</script>
+</body>
+</html>
