@@ -20,3 +20,4 @@ Frameworks:
     - Fake Server
     - Fake XMLHttpRequest
 - QUnit
+- Mocha

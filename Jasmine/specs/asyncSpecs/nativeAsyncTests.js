@@ -1,6 +1,6 @@
 /* global describe, it, expect, beforeEach */
 
-describe("Asynchronous specs", function () {
+describe("Asynchronous asyncSpecs", function () {
     "use strict";
     var counter = 0;
 
@@ -12,7 +12,7 @@ describe("Asynchronous specs", function () {
         }, 1);
     });
 
-    it("can be used to ensure asynch code is executed before a test spec is run", function (done) {
+    it("can be used to ensure async code is executed before a test spec is run", function (done) {
         expect(counter).toBe(1);
         done();
     });
