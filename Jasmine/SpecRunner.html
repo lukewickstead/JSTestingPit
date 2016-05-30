@@ -12,6 +12,7 @@
     <script type="text/javascript" src="../lib/jasmine-2.4.1/jasmine-html.js"></script>
     <script type="text/javascript" src="../lib/jasmine-2.4.1/boot.js"></script>
     <script type="text/javascript" src="../lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../lib/jasmine-jquery.js"></script>
 
     <!-- Jasmine tests and fixtures -->
     <script type="text/javascript" src="specs/spec.js"></script>
@@ -35,13 +36,18 @@
     <script type="text/javascript" src="../Jasmine/specs/spySpecs/createSpyObj.js"></script>
     <script type="text/javascript" src="../Jasmine/specs/spySpecs/fuzzyMatchers.js"></script>
 
+    <!-- Jasmine and DOM -->
     <script type="text/javascript" src="specs/testingTheDOM.js"></script>
-</head>
 
+    <!-- Jasmine-jQuery-->
+    <script type="text/javascript" src="specs/jasmineJquery/jqueryMatchers.js"></script>
+    <script type="text/javascript" src="specs/jasmineJquery/htmlFixtures.js"></script>
+    <script type="text/javascript" src="specs/jasmineJquery/jsonFixtures.js"></script>
+    <script type="text/javascript" src="specs/jasmineJquery/eventSpies.js"></script>
+</head>
 <body>
 <div id="TestHtml-Template">
-    <div id="ResultDiv">
-    </div>
+    <div id="ResultDiv"></div>
 </div>
 </body>
 </html>

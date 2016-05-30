@@ -1,7 +1,7 @@
 /* global describe, xdescribe, it, xit, expect, beforeEach, jasmine, toBeCustom, pending */
 
 
-xdescribe("xdescribe can be used to disabled a fixture", function () {
+xdescribe("xdescribe can be used to disable a fixture", function () {
     "use strict";
 
     it("all tests within a disabled fixture are not run", function () {

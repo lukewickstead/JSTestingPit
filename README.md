@@ -5,6 +5,7 @@ Frameworks:
 - Jasmine
     - Jasmine spies
     - Jasmine asynch
+    - Jasmine-jQuery
 - Chai
     - TDD
     - BDD (Should/Expect)

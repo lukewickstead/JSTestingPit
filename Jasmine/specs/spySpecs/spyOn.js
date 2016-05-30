@@ -7,82 +7,82 @@ describe("spyOn can be used to create a spy which replaces a function and allows
 
     beforeAll(function () {
         foo = {
-            FunctionToSpyOn: function (valueOne, valueTwo) {
+            functionToSpyOn: function (valueOne, valueTwo) {
             },
-            FunctionToSpyOnButNotCalled: function () {
+            functionToSpyOnButNotCalled: function () {
             },
-            StubbedFunction: function () {
+            stubbedFunction: function () {
             },
-            CalledWithAFake: function () {
+            calledWithAFake: function () {
             },
-            CalledAsThrough: function () {
+            calledAsThrough: function () {
                 return true;
             },
-            CalledWithThrow: function () {
+            calledWithThrow: function () {
             }
         };
     });
 
     beforeEach(function () {
-        spyOn(foo, 'FunctionToSpyOn');
-        spyOn(foo, 'FunctionToSpyOnButNotCalled');
-        spyOn(foo, 'CalledAsThrough').and.callThrough();
-        spyOn(foo, 'StubbedFunction').and.returnValue(true);
-        spyOn(foo, 'CalledWithThrow').and.throwError("Error");
-        spyOn(foo, 'CalledWithAFake').and.callFake(function () {
+        spyOn(foo, 'functionToSpyOn');
+        spyOn(foo, 'functionToSpyOnButNotCalled');
+        spyOn(foo, 'calledAsThrough').and.callThrough();
+        spyOn(foo, 'stubbedFunction').and.returnValue(true);
+        spyOn(foo, 'calledWithThrow').and.throwError("Error");
+        spyOn(foo, 'calledWithAFake').and.callFake(function () {
             return true;
         });
     });
 
     it("toHaveBeenCalled validates that a function was called", function () {
-        foo.FunctionToSpyOn(1);
+        foo.functionToSpyOn(1);
 
-        expect(foo.FunctionToSpyOn).toHaveBeenCalled();
+        expect(foo.functionToSpyOn).toHaveBeenCalled();
 
         // Negation
-        expect(foo.FunctionToSpyOnButNotCalled).not.toHaveBeenCalled();
+        expect(foo.functionToSpyOnButNotCalled).not.toHaveBeenCalled();
     });
 
     it("toHaveBeenCalledTimes validates that a function was called x times", function () {
-        foo.FunctionToSpyOn(1);
-        foo.FunctionToSpyOn(2, 3);
+        foo.functionToSpyOn(1);
+        foo.functionToSpyOn(2, 3);
 
-        expect(foo.FunctionToSpyOn).toHaveBeenCalledTimes(2);
+        expect(foo.functionToSpyOn).toHaveBeenCalledTimes(2);
 
         // Negation
-        expect(foo.FunctionToSpyOn).not.toHaveBeenCalledTimes(1);
-        expect(foo.FunctionToSpyOn).not.toHaveBeenCalledTimes(3);
+        expect(foo.functionToSpyOn).not.toHaveBeenCalledTimes(1);
+        expect(foo.functionToSpyOn).not.toHaveBeenCalledTimes(3);
     });
 
     it("toHaveBeenCalledWith validates that a function was called with certain parameters", function () {
-        foo.FunctionToSpyOn(1);
-        foo.FunctionToSpyOn(2, 3);
+        foo.functionToSpyOn(1);
+        foo.functionToSpyOn(2, 3);
 
-        expect(foo.FunctionToSpyOn).toHaveBeenCalledWith(1);
-        expect(foo.FunctionToSpyOn).toHaveBeenCalledWith(2, 3);
+        expect(foo.functionToSpyOn).toHaveBeenCalledWith(1);
+        expect(foo.functionToSpyOn).toHaveBeenCalledWith(2, 3);
 
         // Negation
-        expect(foo.FunctionToSpyOn).not.toHaveBeenCalledWith(2);
+        expect(foo.functionToSpyOn).not.toHaveBeenCalledWith(2);
 
     });
 
     it('and.returnValue can be used to stub return data', function () {
-        expect(foo.StubbedFunction()).toEqual(true);
-        expect(foo.StubbedFunction()).not.toEqual(false);
+        expect(foo.stubbedFunction()).toEqual(true);
+        expect(foo.stubbedFunction()).not.toEqual(false);
     });
 
     it('and.CallFake can be used to call an additional function at the same time', function () {
-        expect(foo.CalledWithAFake()).toEqual(true);
+        expect(foo.calledWithAFake()).toEqual(true);
     });
 
     it('and.callThrough can be used to spy on a function and delegate the call to that function', function () {
-        expect(foo.CalledAsThrough()).toEqual(true);
+        expect(foo.calledAsThrough()).toEqual(true);
     });
 
     it('and.throwError can be used to mock an exception being thrown', function () {
 
         try {
-            foo.CalledWithThrow();
+            foo.calledWithThrow();
         } catch (ex) {
             expect(ex.message).toEqual("Error");
         }
@@ -92,61 +92,61 @@ describe("spyOn can be used to create a spy which replaces a function and allows
 
         it("calls.Count which returns the number of times called", function () {
 
-            foo.FunctionToSpyOn(1);
-            foo.FunctionToSpyOn(2, 3);
+            foo.functionToSpyOn(1);
+            foo.functionToSpyOn(2, 3);
 
-            expect(foo.FunctionToSpyOn.calls.count()).toEqual(2);
+            expect(foo.functionToSpyOn.calls.count()).toEqual(2);
         });
 
         it("calls.any can be used to determine if the function was called any number of times", function () {
 
-            foo.FunctionToSpyOn(1);
-            expect(foo.FunctionToSpyOn.calls.any()).toEqual(true);
+            foo.functionToSpyOn(1);
+            expect(foo.functionToSpyOn.calls.any()).toEqual(true);
         });
 
         it("calls.reset can be used to clear the calls", function () {
 
-            foo.FunctionToSpyOn(1);
-            expect(foo.FunctionToSpyOn.calls.any()).toEqual(true);
+            foo.functionToSpyOn(1);
+            expect(foo.functionToSpyOn.calls.any()).toEqual(true);
 
-            foo.FunctionToSpyOn.calls.reset();
-            expect(foo.FunctionToSpyOn.calls.any()).toEqual(false);
+            foo.functionToSpyOn.calls.reset();
+            expect(foo.functionToSpyOn.calls.any()).toEqual(false);
         });
 
 
         it("calls.argsFor can be used assert upon the arguments of each call", function () {
 
-            foo.FunctionToSpyOn(1);
-            foo.FunctionToSpyOn(2, 3);
+            foo.functionToSpyOn(1);
+            foo.functionToSpyOn(2, 3);
 
-            expect(foo.FunctionToSpyOn.calls.argsFor(0)).toEqual([1]);
-            expect(foo.FunctionToSpyOn.calls.argsFor(1)).toEqual([2, 3]);
+            expect(foo.functionToSpyOn.calls.argsFor(0)).toEqual([1]);
+            expect(foo.functionToSpyOn.calls.argsFor(1)).toEqual([2, 3]);
         });
 
         it("calls.allArgs can be used assert upon the arguments of each call", function () {
 
-            foo.FunctionToSpyOn(1);
-            foo.FunctionToSpyOn(2, 3);
+            foo.functionToSpyOn(1);
+            foo.functionToSpyOn(2, 3);
 
-            expect(foo.FunctionToSpyOn.calls.allArgs()).toEqual([[1], [2, 3]]);
+            expect(foo.functionToSpyOn.calls.allArgs()).toEqual([[1], [2, 3]]);
         });
 
         it("calls.first can be used to return the context for the first call", function () {
 
-            foo.FunctionToSpyOn(1);
-            foo.FunctionToSpyOn(2, 3);
+            foo.functionToSpyOn(1);
+            foo.functionToSpyOn(2, 3);
 
-            expect(foo.FunctionToSpyOn.calls.first()).toEqual({object: foo, args: [1], returnValue: undefined});
+            expect(foo.functionToSpyOn.calls.first()).toEqual({object: foo, args: [1], returnValue: undefined});
         });
 
         it("calls.mostRecent can be used to return the context for the last call", function () {
 
-            foo.FunctionToSpyOn(1);
-            foo.FunctionToSpyOn(2, 3);
+            foo.functionToSpyOn(1);
+            foo.functionToSpyOn(2, 3);
 
-            expect(foo.FunctionToSpyOn.calls.mostRecent().object).toBe(foo);
-            expect(foo.FunctionToSpyOn.calls.mostRecent().args).toEqual([2, 3]);
-            expect(foo.FunctionToSpyOn.calls.mostRecent()).toEqual({object: foo, args: [2, 3], returnValue: undefined});
+            expect(foo.functionToSpyOn.calls.mostRecent().object).toBe(foo);
+            expect(foo.functionToSpyOn.calls.mostRecent().args).toEqual([2, 3]);
+            expect(foo.functionToSpyOn.calls.mostRecent()).toEqual({object: foo, args: [2, 3], returnValue: undefined});
         });
     });
 });
